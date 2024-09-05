@@ -48,7 +48,7 @@ function isURL($url)
 
     <?php
     require "router.php";
-    require "db.php"
+    require "Database.php"
         ?>
 
 </body>
