@@ -26,10 +26,10 @@ class Database
         $this->pdo = $pdo;
     }
 
-    public function query($query)
+    public function query($query, $params = [])
     {
         $stm = $this->pdo->prepare($query);
-        $stm->execute();
+        $stm->execute($params);
         $result = $stm->fetchAll(PDO::FETCH_ASSOC);
         return $result;
     }
