@@ -13,6 +13,9 @@ switch ($uri) {
     case '/contact':
         require 'controllers/contact-controller.php';
         break;
+    case '/notes':
+        require 'controllers/notes-controller.php';
+        break;
     default:
         require 'controllers/home-controller.php';
         break;
