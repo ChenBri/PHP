@@ -9,7 +9,7 @@ class Database
     private $port;
     private $pdo;
 
-    function __construct($host, $db, $user, $pass, $port)
+    function __construct($host, $db, $user = "root", $pass = "", $port)
     {
         $this->host = $host;
         $this->db = $db;
@@ -35,5 +35,3 @@ class Database
     }
 }
 
-$db = new Database('localhost', 'app', 'root', '', '3306');
-dd($db->query("SELECT * FROM posts"));

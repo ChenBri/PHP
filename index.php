@@ -48,8 +48,13 @@ function isURL($url)
 
     <?php
     require "router.php";
-    require "Database.php"
-        ?>
+    require "Database.php";
+    require "config.php";
+
+    $db = new Database($db_config['host'], $db_config['db'], $db_config['user'], $db_config['pass'], $db_config['port']);
+    dd($db->query("SELECT * FROM posts"));
+
+    ?>
 
 </body>
 
