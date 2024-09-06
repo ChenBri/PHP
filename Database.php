@@ -35,3 +35,5 @@ class Database
     }
 }
 
+require "config.php";
+$db = new Database($db_config['host'], $db_config['db'], $db_config['user'], $db_config['pass'], $db_config['port']);
