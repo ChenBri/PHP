@@ -1,7 +1,8 @@
 <div class="p-12">
 
     <?php
-    $uri = substr($_SERVER["REQUEST_URI"], 12);
+    $uri = substr($_SERVER["REQUEST_URI"], 9);
+    // $uri = substr($_SERVER["REQUEST_URI"], 12);
     $uri = parse_url($uri)["path"];
 
     switch ($uri) {
