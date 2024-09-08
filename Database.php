@@ -1,5 +1,4 @@
 <?php
-
 class Database
 {
     private $host;
@@ -35,4 +34,3 @@ class Database
     }
 }
 
-$db = new Database($db_config['host'], $db_config['db'], $db_config['user'], $db_config['pass'], $db_config['port']);

@@ -20,8 +20,6 @@
     require "functions.php";
     require "components/navbar.php";
     require "router.php";
-    
-    
     ?>
 
 </body>
