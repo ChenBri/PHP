@@ -7,7 +7,7 @@ class Database
     private $user;
     private $pass;
     private $port;
-    private $pdo;
+    public $pdo;
 
     function __construct($host, $db, $user = "root", $pass = "", $port)
     {
@@ -35,5 +35,4 @@ class Database
     }
 }
 
-require "config.php";
 $db = new Database($db_config['host'], $db_config['db'], $db_config['user'], $db_config['pass'], $db_config['port']);

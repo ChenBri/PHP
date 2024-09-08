@@ -15,11 +15,13 @@
 
 
     <?php
+    require "config.php";
+    require "Database.php";
     require "functions.php";
     require "components/navbar.php";
     require "router.php";
-    require "Database.php";
-    require "config.php";
+    
+    
     ?>
 
 </body>
