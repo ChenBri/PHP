@@ -1,5 +1,5 @@
 <?php 
-class Validatior 
+class Validator 
 {
     public static function string($str){
         $trimmed_str = trim($str);
