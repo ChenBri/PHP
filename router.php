@@ -1,12 +1,13 @@
 <div class="p-12">
 
     <?php
-    $uri = substr($_SERVER["REQUEST_URI"], 9);
-    // $uri = substr($_SERVER["REQUEST_URI"], 12);;;
-    $uri = parse_url($uri)["path"];
+
+
+    $uri = parse_url($_SERVER["REQUEST_URI"])["path"];
 
     switch ($uri) {
-        case '/home':
+        case '/':
+        case '':
             require 'controllers/home-controller.php';
             break;
         case '/about':

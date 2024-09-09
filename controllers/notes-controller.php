@@ -1,4 +1,5 @@
 <?php
+
 require "config.php";
 require "Validator.php";
 
@@ -6,15 +7,6 @@ $header = "Notes";
 $content = "Welcome to the notes view";
 
 $db = new Database($db_config['host'], $db_config['db'], $db_config['user'], $db_config['pass'], $db_config['port']);
-
-// If user is not logged in || login
-/* if(true){
-    require "views/login-view.php";
-} */
-// If user is not logged in || register
-
-// If user is logged in
-// Fetch all notes of the users
 
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -41,7 +33,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         
     }
 }
-
 
 $notes = $db->query("SELECT * FROM notes WHERE user_id = 1");
 
