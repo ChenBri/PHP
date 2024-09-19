@@ -8,6 +8,9 @@ class Database
     private $port;
     public $pdo;
 
+    const FETCH_ALL = 'ALL';
+    const FETCH_SINGLE = 'SINGLE';
+
     function __construct($host, $db, $user = "root", $pass = "", $port)
     {
         $this->host = $host;
@@ -25,11 +28,17 @@ class Database
         $this->pdo = $pdo;
     }
 
-    public function query($query, $params = [])
+    public function query($query, $params = [], $fetchMode = self::FETCH_ALL)
     {
         $stm = $this->pdo->prepare($query);
         $stm->execute($params);
-        $result = $stm->fetchAll(PDO::FETCH_ASSOC);
+
+        if ($fetchMode === self::FETCH_SINGLE) {
+            $result = $stm->fetch(PDO::FETCH_ASSOC);
+        } else {
+            $result = $stm->fetchAll(PDO::FETCH_ASSOC);
+        }
+
         return $result;
     }
 }
