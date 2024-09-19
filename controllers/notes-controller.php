@@ -34,6 +34,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 }
 
-$notes = $db->query("SELECT * FROM notes WHERE user_id = 1");
+$notes = $db->query("SELECT * FROM notes WHERE user_id = 1", [], Database::FETCH_ALL);
 
 require "views/notes-view.php";
